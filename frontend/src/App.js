@@ -4,7 +4,7 @@ function App() {
   return (
     <>
     <div>
-      <p>Hello World</p>
+      <p>UIT Project</p>
     </div>
     </>
   );
