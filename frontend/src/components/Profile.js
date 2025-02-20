@@ -7,17 +7,33 @@ function Profile() {
 
   const [user, setUser] = useState('');
   const params = useParams();
+  const u1=localStorage.getItem('user');
+  const a1=localStorage.getItem('admin');
   const getProfile = async (event) => {
-    let result = await fetch(`http://localhost:5000/user/${params.id}`, {
-      headers: {
-        authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+    if(u1){
+      let result = await fetch(`http://localhost:5000/user/${params.id}`, {
+        headers: {
+          authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+        }
+      });
+      result = await result.json();
+      if (result) {
+        setUser(result);
       }
-    });
-    result = await result.json();
-    if (result) {
-      setUser(result);
-    }
-  };
+    };
+    if(a1){
+      let result = await fetch(`http://localhost:5000/admin/${params.id}`, {
+        headers: {
+          authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+        }
+      });
+      result = await result.json();
+      if (result) {
+        setUser(result);
+      }
+    };
+  }  
+    
 
   useEffect(() => {
     getProfile();
@@ -34,7 +50,7 @@ function Profile() {
           <div className="text-center">
             <img src={user.photo} alt="Profile" className="profile-photo" />
           </div>
-          <Col className='layer' md={6}><strong>ID Number:</strong> {user.aadhar}</Col>
+          <Col className='layer' md={6}><strong>ID Number:</strong> {u1 ? user.aadhar :user.govt_id}</Col>
           <Col md={6}><strong>Name:</strong> {user.name}</Col>
           <Col md={6}><strong>Date of Birth:</strong> {user.dob}</Col>
           <Col md={6}><strong>Gender:</strong> {user.gender}</Col>
@@ -42,7 +58,7 @@ function Profile() {
           <Col md={6}><strong>Email ID:</strong> {user.email}</Col>
           <Col md={12}><strong>Address:</strong> {user.address}</Col>
         </Card.Body>
-        <Link to={'/dashboard'} className="btn btn-primary w-50 mb-2">
+        <Link to={u1 ? '/dashboard' : '/admin/dashboard'} className="btn btn-primary w-50 mb-2">
          Back
       </Link>
       </Card>

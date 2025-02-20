@@ -21,9 +21,9 @@ const Dashboard = () => {
                 <button onClick={logout} className="btn btn-secondary w-100 mb-2 d-flex align-items-center">
                     <FaSignInAlt className="me-2" /> Logout
                 </button>
-                <button className="btn btn-info w-100 d-flex align-items-center">
+                <Link to={'/patient/update/'+user._id} className="btn btn-info w-100 d-flex align-items-center">
                     <FaUserEdit className="me-2" /> Update Profile
-                </button>
+                </Link>
                 <div className="flex-grow-1"></div>
             </div>
 
