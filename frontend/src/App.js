@@ -8,6 +8,7 @@ import Landing from './components/Landing';
 import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import AdminDashboard from './components/AdminDashboard';
 import Footer from "./components/Footer";
 import AdminUpdate from "./components/AdminUpdate";
 import PatientUpdate from "./components/PatientUpdate";
@@ -37,10 +38,11 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
         <Route path='/admin/update' element={<AdminUpdate/>}/>
         <Route path='/patient/update' element={<PatientUpdate/>}/>
         <Route path='/upload' element={<Upload/>}/>
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/profile/:id' element={<Profile/>}/>
         
       </Routes>
     </BrowserRouter>
