@@ -1,17 +1,17 @@
 .forgot-password{
-padding-left: 2px;
-margin-top: 5px;
-color: #797979;
-font-size: 15px;
-} 
-
-.forgot-password span{
-color: #3674B5;
-cursor: pointer;
-}
-
-.submit{
-display: flex;
-gap: 3px;
-margin: 15px auto;
-}
+  padding-left: 2px;
+  margin-top: 5px;
+  color: #797979;
+  font-size: 15px;
+  } 
+  
+  .forgot-password span{
+  color: #3674B5;
+  cursor: pointer;
+  }
+  
+  .submit{
+  display: flex;
+  gap: 3px;
+  margin: 15px auto;
+  }
