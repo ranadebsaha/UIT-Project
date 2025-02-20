@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Login.css';
 
-function Login_Patient() {
+function Login() {
   return (
     <Form className='container'>
       <div className='head'>
@@ -30,15 +29,4 @@ function Login_Patient() {
   );
 }
 
-export default Login_Patient;
-=======
-import React from 'react'
-
-export default function Login() {
-  return (
-    <div>
-      login
-    </div>
-  )
-}
->>>>>>> d6695555e78c9edf48fd9bb2b9db7e39b63be512
+export default Login;

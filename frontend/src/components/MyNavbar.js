@@ -49,7 +49,7 @@ const MyNavbar = () => {
                         <Button variant="outline-dark" onClick={() => navigate("/login")}>
                             Patient Login
                         </Button>
-                        <Button variant="outline-dark" onClick={() => navigate("/login")}>
+                        <Button variant="outline-dark" onClick={() => navigate("/admin/login")}>
                             Admin/Staff Login
                         </Button>
                         {/* <Button variant="outline-dark" onClick={() => navigate("/signup")}>

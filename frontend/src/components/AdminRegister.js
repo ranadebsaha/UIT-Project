@@ -4,7 +4,7 @@ import "./AdminRegister.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 
 
-function Register_Admin() {
+function AdminRegister() {
   return (
     <Form className="container">
       <div className="head">
@@ -83,4 +83,4 @@ function Register_Admin() {
   );
 }
 
-export default Register_Admin;
+export default AdminRegister;
