@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './AdminLogin.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 function AdminLogin() {
+  const departments = ["Doctor", "Admin", "Staff", "Nurse"];
+  const [selectedDepartment, setSelectedDepartment] = useState("Department");
+
   return (
     <Form className='container'>
       <div className='head'>
           <Form.Label className='text'>Admin Login Portal</Form.Label>
           <Form.Label className='underline'></Form.Label>
-          <Dropdown>
-      <Dropdown.Toggle className= '' variant="success" id="dropdown-basic">
-        Department
-      </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Doctor</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Admin</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Staff</Dropdown.Item>
-        <Dropdown.Item href="#/action-4">Nurse</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+          <Dropdown onSelect={(eventKey) => setSelectedDepartment(eventKey)}>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            {selectedDepartment}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {departments.map((dept, index) => (
+            <Dropdown.Item key={index} eventKey={dept}>
+              {dept}
+            </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email ID</Form.Label>
             <div className='input'>
