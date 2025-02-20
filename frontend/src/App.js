@@ -5,6 +5,8 @@ import MyNavbar from './components/MyNavbar';
 import Landing from './components/Landing';
 import Register from './components/Register';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+
 import Footer from "./components/Footer";
 
 function Layout({ children }) {
@@ -24,9 +26,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path="/" element={<Layout><Landing /></Layout>} />
-        <Route path="/signup" element={<Layout><Register /></Layout>} />
-        <Route path="/login" element={<Layout><Login /></Layout>} />
+      
+        <Route path='/dashboard' element={<Dashboard/>}/>
       </Routes>
     </BrowserRouter>
   );
