@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import './AdminLogin.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-function Login_Admin() {
+function AdminLogin() {
   return (
     <Form className='container'>
       <div className='head'>
@@ -42,4 +42,4 @@ function Login_Admin() {
   );
 }
 
-export default Login_Admin;
+export default AdminLogin;
