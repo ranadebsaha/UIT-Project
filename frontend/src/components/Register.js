@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import "./Register.css";
@@ -79,3 +80,14 @@ function Register_Patient() {
 }
 
 export default Register_Patient;
+=======
+import React from 'react'
+
+export default function Register() {
+  return (
+    <div>
+      signup
+    </div>
+  )
+}
+>>>>>>> d6695555e78c9edf48fd9bb2b9db7e39b63be512

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -30,3 +31,14 @@ function Login_Patient() {
 }
 
 export default Login_Patient;
+=======
+import React from 'react'
+
+export default function Login() {
+  return (
+    <div>
+      login
+    </div>
+  )
+}
+>>>>>>> d6695555e78c9edf48fd9bb2b9db7e39b63be512
