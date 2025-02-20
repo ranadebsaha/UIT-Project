@@ -8,15 +8,17 @@ import Landing from './components/Landing';
 import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
-
-
 import Footer from "./components/Footer";
+import AdminUpdate from "./components/AdminUpdate";
+import PatientUpdate from "./components/PatientUpdate";
+import Upload from "./components/Upload";
+import Profile from "./components/Profile";
 
 function Layout({ children }) {
   const location = useLocation();
   return (
     <>
-      
+      <MyNavbar />
       {children}
       {location.pathname === "/" && <Footer />}
     </>
@@ -27,7 +29,7 @@ function App() {
   return (
     
     <BrowserRouter>
-    <MyNavbar />
+    
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path='/admin/register' element={<RegisterAdmin/>}/>
@@ -35,8 +37,12 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/admin/update' element={<AdminUpdate/>}/>
+        <Route path='/patient/update' element={<PatientUpdate/>}/>
+        <Route path='/upload' element={<Upload/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
