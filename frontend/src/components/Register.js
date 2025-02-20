@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import "./Register_Patient.css";
+import "./Register.css";
 
 function Register_Patient() {
   return (

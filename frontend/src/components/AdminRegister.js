@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import "./Register_Admin.css";
+import "./AdminRegister.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 
 

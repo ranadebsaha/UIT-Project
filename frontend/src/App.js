@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import RegisterPatient from './components/Register_Patient';
-import LoginAdmin from './components/Login_Admin';
-import LoginPatient from './components/Login_Patient';
-import RegisterAdmin from './components/Register_Admin';
+import RegisterPatient from './components/Register';
+import LoginAdmin from './components/AdminLogin';
+import LoginPatient from './components/Login';
+import RegisterAdmin from './components/AdminRegister';
 
 
 

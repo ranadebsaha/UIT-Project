@@ -1,14 +1,27 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './Login_Patient.css';
+import './AdminLogin.css';
+import Dropdown from 'react-bootstrap/Dropdown';
 
-function Login_Patient() {
+function Login_Admin() {
   return (
     <Form className='container'>
       <div className='head'>
-          <Form.Label className='text'>Patient Login Portal</Form.Label>
+          <Form.Label className='text'>Admin Login Portal</Form.Label>
           <Form.Label className='underline'></Form.Label>
+          <Dropdown>
+      <Dropdown.Toggle className= '' variant="success" id="dropdown-basic">
+        Department
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">Doctor</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Admin</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Staff</Dropdown.Item>
+        <Dropdown.Item href="#/action-4">Nurse</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email ID</Form.Label>
             <div className='input'>
@@ -22,11 +35,11 @@ function Login_Patient() {
               <Form.Control type="password" placeholder="Password" />
             </div>
         </Form.Group>
-        <Form.Label className='forgot-password'>Forgot password? <span>Click here</span></Form.Label>
+      <Form.Label className='forgot-password'>Forgot password? <span>Click here</span></Form.Label>
       </div>
       <div className='submit'><Button variant="primary" type="submit">Login</Button></div>
     </Form>
   );
 }
 
-export default Login_Patient;
+export default Login_Admin;
