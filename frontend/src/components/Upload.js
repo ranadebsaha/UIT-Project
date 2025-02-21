@@ -3,6 +3,8 @@ import React, { useState, useRef } from 'react';
 
 const Upload = () => {
     const [file, setFile] = useState(null);
+    const [fileType, setFileType] = useState('');
+    const [otherDetails, setOtherDetails] = useState('');
     const [error, setError] = useState('');
     const fileInputRef = useRef(null);
 
@@ -21,8 +23,17 @@ const Upload = () => {
         }
     };
 
+    const handleFileTypeChange = (e) => {
+        setFileType(e.target.value);
+        if (e.target.value) {
+            setError('');
+        }
+    };
+
     const handleCancel = () => {
         setFile(null);
+        setFileType('');
+        setOtherDetails('');
         setError('');
         if (fileInputRef.current) {
             fileInputRef.current.value = '';
@@ -30,7 +41,11 @@ const Upload = () => {
     };
 
     const handleUpload = () => {
-        alert(`Uploading: ${file.name}`);
+        if (!fileType) {
+            setError('Please select a file type.');
+            return;
+        }
+        alert(`Uploading: ${file.name} as ${fileType} ${fileType === "Other" && otherDetails ? `with details: ${otherDetails}` : ''}`);
     };
 
     return (
@@ -46,11 +61,45 @@ const Upload = () => {
                 />
             </div>
 
+            {file && (
+                <>
+                    <div className="mb-3">
+                        <label className="form-label">Select File Type:</label>
+                        <select
+                            className="form-select"
+                            value={fileType}
+                            onChange={handleFileTypeChange}
+                        >
+                            <option value="">-- Select File Type --</option>
+                            <option value="Prescription">Prescription</option>
+                            <option value="Medical Report">Medical Report</option>
+                            <option value="Invoice">Invoice</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    {fileType === "Other" && (
+                        <div className="mb-3">
+                            <label className="form-label">Enter File Details (Optional):</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter details about the file"
+                                value={otherDetails}
+                                onChange={(e) => setOtherDetails(e.target.value)}
+                            />
+                        </div>
+                    )}
+                </>
+            )}
+
             {error && <p className="text-danger">{error}</p>}
 
             {file && (
                 <div className="file-info mb-3">
-                    <p>Selected file: {file.name}</p>
+                    <p><strong>Selected File:</strong> {file.name}</p>
+                    {fileType && <p><strong>File Type:</strong> {fileType}</p>}
+                    {fileType === "Other" && otherDetails && <p><strong>Details:</strong> {otherDetails}</p>}
                     <button className="btn btn-danger me-2" onClick={handleCancel}>
                         Cancel
                     </button>
